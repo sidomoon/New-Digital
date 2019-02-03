@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/Proxima-Nova-Semibold.woff2") format("woff2"), url("../fonts/Proxima-Nova-Semibold.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat Extra";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Source-Sans-Pro-Regular.woff2") format("woff2"), url("../fonts/Source-Sans-Pro-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/Source-Sans-Pro-Semibold.woff2") format("woff2"), url("../fonts/Source-Sans-Pro-Semibold.woff") format("woff");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: bolder;
+  src: url("../fonts/Source-Sans-Pro-Bold.woff2") format("woff2"), url("../fonts/Source-Sans-Pro-Bold.woff") format("woff");
+}
+body {
+  margin: 0 auto;
+  padding: 0;
+  min-width: 320px;
+  max-width: 1920px;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 29.13px;
+  color: #ffffff;
+}
+.button {
+  display: block;
+  margin: 0;
+  padding: 12px 37px;
+  font-family: "Source Sans Pro";
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 29.13px;
+  color: #ffffff;
+  border: none;
+  -webkit-border-radius: 25px;
+          border-radius: 25px;
+  background-color: #fa4a33;
+  -webkit-box-shadow: 8px 15px 14px rgba(88, 39, 39, 0.27);
+          box-shadow: 8px 15px 14px rgba(88, 39, 39, 0.27);
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.button:hover {
+  background-color: #009ce3;
+  -webkit-box-shadow: 0 0 24px rgba(88, 39, 39, 0.5);
+          box-shadow: 0 0 24px rgba(88, 39, 39, 0.5);
+}
+.button:active {
+  -webkit-box-shadow: 0 0 24px rgba(88, 39, 39, 0.9);
+          box-shadow: 0 0 24px rgba(88, 39, 39, 0.9);
+}

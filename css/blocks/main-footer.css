@@ -1,0 +1,95 @@
+.main-footer {
+  margin: 0;
+  padding: 0;
+  background-color: #1b1b1b;
+}
+.main-footer__wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.main-footer__title {
+  margin: 0;
+  padding: 100px 0;
+  padding-top: 110px;
+  padding-left: 19.7%;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 36px;
+  color: #ffffff;
+}
+.main-footer__list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  margin-left: 7.7%;
+  padding: 100px 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  list-style: none;
+}
+.main-footer__item {
+  margin: 0;
+  margin-right: 38px;
+  padding: 0;
+}
+.main-footer__item:last-child {
+  margin-right: 0;
+}
+.main-footer__link {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans Pro";
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 51.81px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.main-footer__list-social {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  margin-left: 7.5%;
+  padding: 100px 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  list-style: none;
+}
+.main-footer__item-social {
+  margin: 0;
+  margin-right: 25px;
+  padding: 0;
+}
+.main-footer__item-social:last-child {
+  margin-right: 0;
+}
+.main-footer__link-social {
+  margin: 0;
+  padding: 0;
+}
