@@ -1,0 +1,114 @@
+.main-start {
+  margin: 0;
+  padding: 0;
+
+  background-color: #ffffff;
+}
+
+.main-start__wrapper {
+  margin: 0;
+  margin-top: 68px;
+  margin-left: 1%;
+  margin-bottom: 100px;
+  padding: 0;
+
+  text-align: center;
+}
+
+.main-start__title {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Montserrat Extra";
+  font-size: 50px;
+  line-height: 51.81px;
+  color: #3c3c3c;
+}
+
+.main-start__title b {
+  color: #fa4a33;
+}
+
+.main-start__list {
+  display: flex;
+
+  margin: 0;
+  margin-top: 70px;
+  margin-left: 18.8%;
+  padding: 0;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  list-style: none;
+}
+
+.main-start__item {
+  margin: 0;
+  padding: 0;
+  padding-top: 150px;
+
+  position: relative;
+
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 29.13px;
+  color: #4f4f4f;
+
+  &:nth-child(1) {
+    margin-right: 5.6%;
+  }
+
+  &:nth-child(2) {
+    margin-right: 4.4%;
+  }
+
+  &:nth-child(3) {
+    margin-right: 1.8%;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+
+    top: 22px;
+    left: 27px;
+
+    width: 104px;
+    height: 105px;
+
+    background-image: url("../img/content.png");
+    background-repeat: no-repeat;
+  }
+
+  &:nth-child(2)::before {
+    top: 10px;
+    left: 51px;
+
+    width: 121px;
+    height: 117px;
+
+    background-image: url("../img/pay.png");
+  }
+
+  &:nth-child(3)::before {
+    top: 7px;
+    left: 111px;
+
+    width: 98px;
+    height: 119px;
+
+    background-image: url("../img/infographics.png");
+  }
+
+  &:nth-child(4)::before {
+    top: 15px;
+    left: 98px;
+
+    width: 105px;
+    height: 110px;
+
+    background-image: url("../img/discounts.png");
+  }
+}

@@ -1,0 +1,169 @@
+.main-header-title {
+  margin: 0;
+  padding: 0;
+}
+
+.main-header-title__wrapper {
+  margin: 0;
+  padding: 0;
+
+  position: relative;
+
+  min-height: 702px;
+
+  background-color: #009ce3;
+  background-image: url("../img/background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.main-header-title__list {
+  display: flex;
+
+  margin: 0;
+  margin-left: 1%;
+  padding: 0;
+
+  flex-direction: column;
+  align-items: center;
+
+  list-style: none;
+
+  text-decoration: none;
+}
+
+.main-header-title__item {
+  margin: 0;
+  padding: 0;
+
+  &:nth-child(1) {
+    padding-top: 92px;
+
+    font-family: "Montserrat Extra";
+    font-size: 80px;
+    line-height: 80px;
+    color: #f8fcff;
+  }
+
+  &:nth-child(2) {
+    margin-top: 32px;
+    margin-left: 17px;
+
+    position: relative;
+
+    font-family: "Montserrat Extra";
+    font-size: 50px;
+    line-height: 50px;
+    color: #fa4a33;
+
+    z-index: 1;
+
+    &::before {
+      position: absolute;
+      content: "";
+
+      top: -13px;
+      left: -80px;
+
+      width: 410px;
+      height: 80px;
+
+      background-image: url("../img/arrow.png");
+      background-repeat: no-repeat;
+
+      z-index: -1;
+    }
+  }
+
+  &:nth-child(3) {
+    margin-top: 30px;
+    margin-left: 5px;
+
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 49.13px;
+    color: #f8fcff;
+
+    text-align: center;
+  }
+
+  &:nth-child(4) {
+    margin-top: 52px;
+
+    font-family: "Montserrat";
+    font-size: 36px;
+    line-height: 36px;
+    color: #ffffff;
+  }
+
+  &:nth-child(5) {
+    margin-top: 52px;
+  }
+}
+
+.main-header-title__sub-list {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  list-style: none;
+}
+
+.main-header-title__sub-item {
+  margin: 0;
+  padding: 0;
+
+  &:first-child {
+    margin-left: 5px;
+    margin-right: 100px;
+  }
+}
+
+.main-header-title__sub-link {
+  margin: 0;
+  padding: 0;
+  padding-left: 30px;
+
+  position: relative;
+
+  font-family: "Source Sans Pro";
+  font-weight: bolder;
+  font-size: 30px;
+  line-height: 30px;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  &:last-child {
+    margin-left: 72px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+
+    top: -15px;
+    left: -80px;
+
+    width: 80px;
+    height: 86px;
+
+    background-image: url("../img/skype2.png");
+    background-repeat: no-repeat;
+    background-size: 155px auto;
+    background-position: -28px -37px;
+  }
+}
+
+.main-header-title__sub-link--mail::before {
+  width: 87px;
+  height: 105px;
+
+  background-image: url("../img/email2.png");
+  background-position: -30px -34px;
+}

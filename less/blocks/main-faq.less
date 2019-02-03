@@ -1,0 +1,131 @@
+.main-faq {
+  margin: 0;
+  padding: 0;
+
+  background-color: #ffffff;
+  background-image: url("../img/background3.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.main-faq__wrapper {
+  margin: 0;
+  margin-left: 25.3%;
+  padding: 0;
+  padding-top: 55px;
+
+  max-width: 773px;
+}
+
+.main-faq__title {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Montserrat Extra";
+  font-size: 50px;
+  line-height: 51.81px;
+  color: #3c3c3c;
+}
+
+.main-faq__list {
+  margin: 0;
+  margin-top: 55px;
+  padding: 0;
+  padding-bottom: 67px;
+}
+
+.main-faq__item {
+  margin: 0;
+  margin-bottom: 28px;
+  padding: 0;
+
+  border-bottom: 2px solid rgba(79, 79, 79, 0.2);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.main-faq__item-title {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+
+  position: relative;
+
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 30px;
+  color: #4f4f4f;
+
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: "";
+
+    top: 19px;
+    right: 11px;
+
+    width: 14px;
+    height: 2px;
+
+    background-color: rgba(79, 79, 79, 0.5);
+
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+
+    top: 19px;
+    right: 2px;
+
+    width: 14px;
+    height: 2px;
+
+    background-color: rgba(79, 79, 79, 0.5);
+
+    transform: rotate(-45deg);
+  }
+}
+
+.main-faq__item-title--open {
+  color: #0d3693;
+
+  &::before {
+    transform: rotate(-45deg);
+
+    background-color: rgba(79, 79, 79, 1);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+
+    background-color: rgba(79, 79, 79, 1);
+  }
+}
+
+.main-faq__item-text {
+  margin: 0;
+  margin-top: -13px;
+  margin-left: 3px;
+  margin-bottom: 20px;
+  padding: 0;
+
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 28.13px;
+  color: #4f4f4f;
+}
+
+.main-faq__item-title--close + .main-faq__item-text {
+  display: none;
+}
+
+.main-faq__item-title--open + .main-faq__item-text {
+  display: block;
+}

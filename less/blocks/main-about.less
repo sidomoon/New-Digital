@@ -1,0 +1,97 @@
+.main-about {
+  margin: 0;
+  padding: 0;
+
+  background-color: #ffffff;
+}
+
+.main-about__wrapper {
+  display: flex;
+
+  margin: 0;
+  margin-left: 7.8%;
+  padding: 0;
+  padding-top: 142px;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.main-about__photo {
+  margin: 0;
+  margin-top: 44px;
+  padding: 0;
+}
+
+.main-about__block {
+  margin: 0;
+  margin-left: 126px;
+  padding: 0;
+}
+
+.main-about__title {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Montserrat Extra";
+  font-size: 50px;
+  line-height: 51.81px;
+  color: #3c3c3c;
+}
+
+.main-about__list {
+  margin: 0;
+  margin-top: 48px;
+  margin-left: 2px;
+  padding: 0;
+
+  max-width: 630px;
+
+  list-style: none;
+}
+
+.main-about__item {
+  margin: 0;
+  margin-top: 29px;
+  padding: 0;
+
+  position: relative;
+
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 29px;
+  color: #4f4f4f;
+
+  &::before {
+    position: absolute;
+    content: "";
+
+    top: -27px;
+    left: -120px;
+
+    width: 125px;
+    height: 114px;
+
+    background-image: url("../img/done.png");
+    background-repeat: no-repeat;
+  }
+
+  &:nth-child(2)::before {
+    top: -7px;
+
+    background-image: url("../img/done2.png");
+  }
+
+  &:nth-child(3)::before {
+    top: 3px;
+    left: -112px;
+
+    background-image: url("../img/done3.png");
+  }
+}
+
+.main-about__button {
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
