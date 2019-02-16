@@ -163,6 +163,7 @@
         -ms-flex-preferred-size: 40%;
             flex-basis: 40%;
     /*вказується основний розмір flex елемента*/
+    width: 40%;
   }
   .main-about__block {
     padding-left: 8%;

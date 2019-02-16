@@ -703,6 +703,7 @@ body {
         -ms-flex-preferred-size: 40%;
             flex-basis: 40%;
     /*вказується основний розмір flex елемента*/
+    width: 40%;
   }
   .main-about__block {
     padding-left: 8%;
@@ -1091,6 +1092,7 @@ body {
     -webkit-flex-basis: 42%;
         -ms-flex-preferred-size: 42%;
             flex-basis: 42%;
+    width: 42%;
     -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
         -ms-flex-order: 2;
@@ -1534,6 +1536,7 @@ body {
     -webkit-flex-basis: 40%;
         -ms-flex-preferred-size: 40%;
             flex-basis: 40%;
+    width: 40%;
   }
   .main-post__block {
     margin: 0;

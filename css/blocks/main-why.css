@@ -106,6 +106,7 @@
     -webkit-flex-basis: 42%;
         -ms-flex-preferred-size: 42%;
             flex-basis: 42%;
+    width: 42%;
     -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
         -ms-flex-order: 2;
