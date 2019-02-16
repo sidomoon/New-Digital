@@ -1,83 +1,204 @@
 .main-about {
   margin: 0;
+  /*обнулення зовнішніх відступів*/
   padding: 0;
+  /*обнулення внутрішніх відступів*/
+  padding-top: 30px;
+  /*вказується верхній внутрішній відступ*/
   background-color: #ffffff;
+  /*вказується колір фону*/
 }
 .main-about__wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  margin-left: 7.8%;
-  padding: 0;
-  padding-top: 142px;
-  -webkit-box-orient: horizontal;
+  /*задається flex об'єкт*/
+  margin: 0 auto;
+  /*центрування за допомогою зовнішніх відступів*/
+  padding: 0 10px;
+  /*задаються внутрішні відступи*/
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /*вертикальний напрямок flex елементів*/
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  /*flex елементи переносяться*/
+  max-width: 500px;
+  /*вказується максимальна ширина*/
 }
 .main-about__photo {
   margin: 0;
-  margin-top: 44px;
+  /*обнулення зовнішніх відступів*/
   padding: 0;
+  /*обнулення внутрішніх відступів*/
+  width: 100%;
+  /*вказується ширина блока*/
+  height: auto;
+  /*вказується висота*/
 }
 .main-about__block {
-  margin: 0;
-  margin-left: 126px;
+  margin: 0 5px;
+  /*вказуються зовнішні відступи*/
   padding: 0;
+  /*обнулення внутрішніх відступів*/
+  padding-left: 15%;
+  /*вказується лівий внутрішній відступ*/
 }
 .main-about__title {
   margin: 0;
+  /*обнулення зовнішніх відступів*/
+  margin-top: 20px;
+  /*вказується верхній зовнішній відступ*/
   padding: 0;
+  /*обнулення внутрішніх відступів*/
   font-family: "Montserrat Extra";
-  font-size: 50px;
+  /*вказується шрифт*/
+  font-size: 40px;
+  /*вказується розмір шрифту*/
   line-height: 51.81px;
+  /*вказується висота стрічки*/
   color: #3c3c3c;
+  /*вказується колір шрифту*/
 }
 .main-about__list {
   margin: 0;
-  margin-top: 48px;
-  margin-left: 2px;
+  /*обнулення зовнішніх відступів*/
+  margin-top: 30px;
+  /*вказується верхній зовнішній відступ*/
   padding: 0;
-  max-width: 630px;
+  /*обнулення внутрішніх відступів*/
   list-style: none;
+  /*відміняється оформлення списку*/
 }
 .main-about__item {
   margin: 0;
-  margin-top: 29px;
+  /*обнулення зовнішніх відступів*/
+  margin-top: 20px;
+  /*вказується верхній зовнішній відступ*/
   padding: 0;
+  /*обнулення внутрішніх відступів*/
   position: relative;
+  /*блок позиціонується відносно*/
   font-family: "Source Sans Pro";
+  /*вказується шрифт*/
   font-weight: bold;
+  /*вказується жирний шрифт*/
   font-size: 19px;
+  /*вказується розмір шрифту*/
   line-height: 29px;
+  /*вказується висота стрічки*/
   color: #4f4f4f;
+  /*вказується колір шрифту*/
 }
 .main-about__item::before {
+  /*описуються параметри псевдоелемента*/
   position: absolute;
+  /*абсолютне позиціонування*/
   content: "";
-  top: -27px;
-  left: -120px;
-  width: 125px;
-  height: 114px;
+  /*додається зміст якого не було*/
+  top: 5%;
+  /*відстань від краю елемента до верхньої точки псевдоелемента*/
+  left: -60px;
+  /*відстань від краю елемента до лівої точки псевдоелемента*/
+  width: 60px;
+  /*ширина псевдоелемента*/
+  height: 60px;
+  /*висота псевдоелемента*/
   background-image: url("../img/done.png");
+  /*вказується фонове зображення*/
   background-repeat: no-repeat;
+  /*фонове зображення не повторюється*/
+  -webkit-background-size: contain;
+          background-size: contain;
+  /*фонове зображення повністю поміщається із збереженням пропорцій*/
 }
 .main-about__item:nth-child(2)::before {
-  top: -7px;
+  /*псевдоелемент другого елемента списку*/
   background-image: url("../img/done2.png");
+  /*вказується фонове зображення*/
 }
 .main-about__item:nth-child(3)::before {
-  top: 3px;
-  left: -112px;
+  /*псевдоелемент третього елемента списку*/
   background-image: url("../img/done3.png");
+  /*вказується фонове зображення*/
 }
 .main-about__button {
-  margin-top: 70px;
-  margin-bottom: 40px;
+  margin: 0;
+  /*обнулення зовнішніх відступів*/
+  margin-top: 30px;
+  /*вказується верхній зовнішній відступ*/
+  margin-bottom: 20px;
+  /*вказується нижній зовнішній відступ*/
+}
+@media (min-width: 1170px) {
+  /*даний блок почне працювати коли ширина екрана буде більше 1170px*/
+  .main-about {
+    padding-top: 70px;
+    /*вказується верхній внутрішній відступ*/
+  }
+  .main-about__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    /*горизонтальний напрямок flex елементів*/
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    /*вирівнювання flex елементів*/
+    max-width: 1170px;
+    /*максимальна ширина блока*/
+  }
+  .main-about__photo {
+    margin-top: 65px;
+    /*вказується верхній зовнішній відступ*/
+    -webkit-flex-basis: 40%;
+        -ms-flex-preferred-size: 40%;
+            flex-basis: 40%;
+    /*вказується основний розмір flex елемента*/
+  }
+  .main-about__block {
+    padding-left: 8%;
+    /*вказується лівий внутрішній відступ*/
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
+    /*вказується основний розмір flex елемента*/
+  }
+  .main-about__title {
+    font-size: 50px;
+    /*вказується розмір шрифту*/
+  }
+  .main-about__item::before {
+    /*описуються параметри псевдоелемента*/
+    top: -15%;
+    /*відстань від краю елемента до верхньої точки псевдоелемента*/
+    left: -88px;
+    /*відстань від краю елемента до лівої точки псевдоелемента*/
+    width: 90px;
+    /*ширина псевдоелемента*/
+    height: 90px;
+    /*висота псевдоелемента*/
+  }
+  .main-about__item:nth-child(2)::before {
+    /*псевдоелемент другого елемента списку*/
+    top: 10%;
+    /*відстань від краю елемента до верхньої точки псевдоелемента*/
+  }
+  .main-about__item:nth-child(3)::before {
+    /*псевдоелемент третього елемента списку*/
+    top: 12%;
+    /*відстань від краю елемента до верхньої точки псевдоелемента*/
+  }
+  .main-about__button {
+    margin-top: 50px;
+    /*вказується верхній зовнішній відступ*/
+  }
 }

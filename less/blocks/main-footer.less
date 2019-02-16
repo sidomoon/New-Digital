@@ -1,3 +1,5 @@
+@import "../variabless.less";
+
 .main-footer {
   margin: 0;
   padding: 0;
@@ -8,17 +10,16 @@
 .main-footer__wrapper {
   display: flex;
 
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  padding: 0 5%;
 
-  flex-direction: row;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .main-footer__title {
-  margin: 0;
-  padding: 100px 0;
-  padding-top: 110px;
-  padding-left: 19.7%;
+  margin: 0 auto;
+  padding: 50px 0;
 
   font-family: "Montserrat";
   font-weight: bold;
@@ -30,11 +31,10 @@
 .main-footer__list {
   display: flex;
 
-  margin: 0;
-  margin-left: 7.7%;
-  padding: 100px 0;
+  margin: 0 auto;
+  padding: 0;
 
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
 
   list-style: none;
@@ -42,12 +42,7 @@
 
 .main-footer__item {
   margin: 0;
-  margin-right: 38px;
   padding: 0;
-
-  &:last-child {
-    margin-right: 0;
-  }
 }
 
 .main-footer__link {
@@ -66,9 +61,8 @@
 .main-footer__list-social {
   display: flex;
 
-  margin: 0;
-  margin-left: 7.5%;
-  padding: 100px 0;
+  margin: 20px auto;
+  padding: 0;
 
   flex-direction: row;
   flex-wrap: wrap;
@@ -89,4 +83,38 @@
 .main-footer__link-social {
   margin: 0;
   padding: 0;
+}
+
+@media (min-width: @tablet-width) {
+  .main-footer__wrapper {
+    flex-direction: row;
+  }
+
+  .main-footer__list {
+    margin-top: 50px;
+    flex-direction: row;
+  }
+
+  .main-footer__item {
+    margin-right: 15px;
+  }
+
+  .main-footer__list-social {
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .main-footer {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  .main-footer__wrapper {
+    max-width: 1170px;
+  }
+
+  .main-footer__item {
+    margin-right: 40px;
+  }
 }

@@ -8,43 +8,40 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  margin-left: 9.7%;
-  padding: 0;
-  padding-top: 122px;
-  padding-bottom: 40px;
-  -webkit-box-orient: horizontal;
+  margin: 0 auto;
+  padding: 0 10px;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  max-width: 500px;
 }
 .main-post__photo {
   margin: 0;
-  margin-top: 42px;
   padding: 0;
+  width: 100%;
+  height: auto;
 }
 .main-post__block {
-  margin: 0;
-  margin-left: 5.5%;
+  margin: 0 10px;
+  margin-top: 30px;
   padding: 0;
-  max-width: 650px;
 }
 .main-post__title {
   margin: 0;
   padding: 0;
   font-family: "Montserrat Extra";
-  font-size: 50px;
+  font-size: 40px;
   line-height: 61.81px;
   color: #3c3c3c;
 }
 .main-post__text {
   margin: 0;
-  margin-top: 100px;
-  margin-left: 2px;
+  margin-top: 20px;
   padding: 0;
   font-family: "Source Sans Pro";
   font-weight: bold;
@@ -54,4 +51,43 @@
 }
 .main-post__button {
   margin-top: 40px;
+}
+@media (min-width: 1170px) {
+  .main-post {
+    padding-top: 20px;
+  }
+  .main-post__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    max-width: 1170px;
+  }
+  .main-post__photo {
+    margin-top: 40px;
+    -webkit-flex-basis: 40%;
+        -ms-flex-preferred-size: 40%;
+            flex-basis: 40%;
+  }
+  .main-post__block {
+    margin: 0;
+    padding-left: 7%;
+    -webkit-flex-basis: 52%;
+        -ms-flex-preferred-size: 52%;
+            flex-basis: 52%;
+  }
+  .main-post__title {
+    font-size: 50px;
+  }
+  .main-post__text {
+    margin-top: 60px;
+  }
+  .main-post__button {
+    margin-top: 50px;
+  }
 }

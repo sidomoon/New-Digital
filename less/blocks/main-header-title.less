@@ -1,3 +1,5 @@
+@import "../variabless.less";
+
 .main-header-title {
   margin: 0;
   padding: 0;
@@ -6,26 +8,26 @@
 .main-header-title__wrapper {
   margin: 0;
   padding: 0;
+  padding-bottom: 40px;
 
   position: relative;
-
-  min-height: 702px;
 
   background-color: #009ce3;
   background-image: url("../img/background.png");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
+
+  text-align: center;
 }
 
 .main-header-title__list {
   display: flex;
 
   margin: 0;
-  margin-left: 1%;
   padding: 0;
 
   flex-direction: column;
-  align-items: center;
 
   list-style: none;
 
@@ -37,68 +39,69 @@
   padding: 0;
 
   &:nth-child(1) {
-    padding-top: 92px;
+    padding-top: 50px;
 
     font-family: "Montserrat Extra";
-    font-size: 80px;
-    line-height: 80px;
+    font-size: 70px;
+    line-height: 70px;
     color: #f8fcff;
   }
 
   &:nth-child(2) {
     margin-top: 32px;
-    margin-left: 17px;
-
-    position: relative;
+    margin-left: 20px;
 
     font-family: "Montserrat Extra";
-    font-size: 50px;
-    line-height: 50px;
+    font-size: 40px;
+    line-height: 40px;
     color: #fa4a33;
 
     z-index: 1;
-
-    &::before {
-      position: absolute;
-      content: "";
-
-      top: -13px;
-      left: -80px;
-
-      width: 410px;
-      height: 80px;
-
-      background-image: url("../img/arrow.png");
-      background-repeat: no-repeat;
-
-      z-index: -1;
-    }
   }
 
   &:nth-child(3) {
     margin-top: 30px;
-    margin-left: 5px;
+    margin-left: 6px;
 
     font-family: "Source Sans Pro";
     font-weight: bold;
-    font-size: 38px;
+    font-size: 28px;
     line-height: 49.13px;
     color: #f8fcff;
-
-    text-align: center;
   }
 
   &:nth-child(4) {
     margin-top: 52px;
 
     font-family: "Montserrat";
-    font-size: 36px;
-    line-height: 36px;
+    font-size: 26px;
+    line-height: 26px;
     color: #ffffff;
   }
 
   &:nth-child(5) {
     margin-top: 52px;
+  }
+}
+
+.main-header-title__item span {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+
+    top: -6px;
+    left: -55px;
+
+    width: 310px;
+    height: 60px;
+
+    background-image: url("../img/arrow.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    z-index: -1;
   }
 }
 
@@ -108,7 +111,7 @@
   margin: 0;
   padding: 0;
 
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
 
   list-style: none;
@@ -117,53 +120,77 @@
 .main-header-title__sub-item {
   margin: 0;
   padding: 0;
+  padding-top: 30px;
 
   &:first-child {
-    margin-left: 5px;
-    margin-right: 100px;
+    margin-top: 40px;
+    margin-bottom: 90px;
   }
 }
 
 .main-header-title__sub-link {
   margin: 0;
   padding: 0;
-  padding-left: 30px;
 
   position: relative;
 
   font-family: "Source Sans Pro";
   font-weight: bolder;
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 20px;
+  line-height: 20px;
   color: #ffffff;
 
   text-decoration: none;
-
-  &:last-child {
-    margin-left: 72px;
-  }
 
   &::before {
     position: absolute;
     content: "";
 
-    top: -15px;
-    left: -80px;
+    top: -90px;
+    left: 20px;
 
-    width: 80px;
-    height: 86px;
+    width: 100px;
+    height: 100px;
 
     background-image: url("../img/skype2.png");
     background-repeat: no-repeat;
-    background-size: 155px auto;
-    background-position: -28px -37px;
+    background-size: contain;
   }
 }
 
 .main-header-title__sub-link--mail::before {
-  width: 87px;
-  height: 105px;
+  left: 60px;
 
   background-image: url("../img/email2.png");
-  background-position: -30px -34px;
+}
+
+@media (min-width: @tablet-width) {
+  .main-header-title__wrapper {
+    padding-bottom: 80px;
+  }
+
+  .main-header-title__sub-list {
+    flex-direction: row;
+
+    justify-content: center;
+  }
+
+  .main-header-title__sub-item {
+    padding: 0;
+    padding-left: 50px;
+
+    &:first-child {
+      margin: 0;
+      margin-right: 10%;
+    }
+  }
+
+  .main-header-title__sub-link::before {
+    top: -35px;
+    left: -90px;
+  }
+
+  .main-header-title__sub-link--mail::before {
+    left: -85px;
+  }
 }

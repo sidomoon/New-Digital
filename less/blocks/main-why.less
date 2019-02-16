@@ -1,3 +1,5 @@
+@import "../variabless.less";
+
 .main-why {
   margin: 0;
   padding: 0;
@@ -8,18 +10,22 @@
 .main-why__wrapper {
   display: flex;
 
-  margin: 0;
-  margin-left: 19.9%;
-  padding: 0;
-  padding-top: 155px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 0 10px;
 
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
+
+  max-width: 500px;
 }
 
 .main-why__block {
   margin: 0;
-  padding: 0;
+  margin-top: 30px;
+  padding: 0 10px;
+
+  order: 2;
 }
 
 .main-why__title {
@@ -27,17 +33,15 @@
   padding: 0;
 
   font-family: "Montserrat Extra";
-  font-size: 50px;
+  font-size: 40px;
   line-height: 51.81px;
   color: #3c3c3c;
 }
 
 .main-why__text {
   margin: 0;
-  margin-top: 64px;
+  margin-top: 30px;
   padding: 0;
-
-  max-width: 700px;
 
   font-family: "Source Sans Pro";
   font-weight: bold;
@@ -46,18 +50,63 @@
   color: #4f4f4f;
 
   &:nth-child(3) {
-    margin-top: 35px;
+    margin-top: 30px;
   }
 }
 
 .main-why__button {
-  margin-top: 70px;
+  margin-top: 30px;
   margin-bottom: 40px;
 }
 
 .main-why__photo {
   margin: 0;
-  margin-top: 80px;
-  margin-left: 7.5%;
+  margin-top: 40px;
   padding: 0;
+
+  width: 100%;
+  height: auto;
+
+  order: 1;
+}
+
+@media (min-width: @desktop-width) {
+  .main-why {
+    padding-top: 40px;
+  }
+
+  .main-why__wrapper {
+    flex-direction: row;
+
+    align-items: flex-start;
+
+    max-width: 1170px;
+  }
+
+  .main-why__block {
+    flex-basis: 50%;
+
+    order: 1;
+  }
+
+  .main-why__title {
+    font-size: 50px;
+  }
+
+  .main-why__text {
+    margin-top: 40px;
+  }
+
+  .main-why__button {
+    margin-top: 50px;
+  }
+
+  .main-why__photo {
+    margin-top: 100px;
+    padding-left: 5%;
+
+    flex-basis: 42%;
+
+    order: 2;
+  }
 }

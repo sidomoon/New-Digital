@@ -1,97 +1,148 @@
-.main-about {
-  margin: 0;
-  padding: 0;
+@import "../variabless.less";
 
-  background-color: #ffffff;
+.main-about {
+  margin: 0;/*обнулення зовнішніх відступів*/
+  padding: 0;/*обнулення внутрішніх відступів*/
+  padding-top: 30px;/*вказується верхній внутрішній відступ*/
+
+  background-color: #ffffff;/*вказується колір фону*/
 }
 
 .main-about__wrapper {
-  display: flex;
+  display: flex;/*задається flex об'єкт*/
 
-  margin: 0;
-  margin-left: 7.8%;
-  padding: 0;
-  padding-top: 142px;
+  margin: 0 auto;/*центрування за допомогою зовнішніх відступів*/
+  padding: 0 10px;/*задаються внутрішні відступи*/
 
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;/*вертикальний напрямок flex елементів*/
+  flex-wrap: wrap;/*flex елементи переносяться*/
+
+  max-width: 500px;/*вказується максимальна ширина*/
 }
 
 .main-about__photo {
-  margin: 0;
-  margin-top: 44px;
-  padding: 0;
+  margin: 0;/*обнулення зовнішніх відступів*/
+  padding: 0;/*обнулення внутрішніх відступів*/
+
+  width: 100%;/*вказується ширина блока*/
+  height: auto;/*вказується висота*/
 }
 
 .main-about__block {
-  margin: 0;
-  margin-left: 126px;
-  padding: 0;
+  margin: 0 5px;/*вказуються зовнішні відступи*/
+  padding: 0;/*обнулення внутрішніх відступів*/
+  padding-left: 15%;/*вказується лівий внутрішній відступ*/
 }
 
 .main-about__title {
-  margin: 0;
-  padding: 0;
+  margin: 0;/*обнулення зовнішніх відступів*/
+  margin-top: 20px;/*вказується верхній зовнішній відступ*/
+  padding: 0;/*обнулення внутрішніх відступів*/
 
-  font-family: "Montserrat Extra";
-  font-size: 50px;
-  line-height: 51.81px;
-  color: #3c3c3c;
+  font-family: "Montserrat Extra";/*вказується шрифт*/
+  font-size: 40px;/*вказується розмір шрифту*/
+  line-height: 51.81px;/*вказується висота стрічки*/
+  color: #3c3c3c;/*вказується колір шрифту*/
 }
 
 .main-about__list {
-  margin: 0;
-  margin-top: 48px;
-  margin-left: 2px;
-  padding: 0;
+  margin: 0;/*обнулення зовнішніх відступів*/
+  margin-top: 30px;/*вказується верхній зовнішній відступ*/
+  padding: 0;/*обнулення внутрішніх відступів*/
 
-  max-width: 630px;
-
-  list-style: none;
+  list-style: none;/*відміняється оформлення списку*/
 }
 
 .main-about__item {
-  margin: 0;
-  margin-top: 29px;
-  padding: 0;
+  margin: 0;/*обнулення зовнішніх відступів*/
+  margin-top: 20px;/*вказується верхній зовнішній відступ*/
+  padding: 0;/*обнулення внутрішніх відступів*/
 
-  position: relative;
+  position: relative;/*блок позиціонується відносно*/
 
-  font-family: "Source Sans Pro";
-  font-weight: bold;
-  font-size: 19px;
-  line-height: 29px;
-  color: #4f4f4f;
+  font-family: "Source Sans Pro";/*вказується шрифт*/
+  font-weight: bold;/*вказується жирний шрифт*/
+  font-size: 19px;/*вказується розмір шрифту*/
+  line-height: 29px;/*вказується висота стрічки*/
+  color: #4f4f4f;/*вказується колір шрифту*/
 
-  &::before {
-    position: absolute;
-    content: "";
+  &::before {/*описуються параметри псевдоелемента*/
+    position: absolute;/*абсолютне позиціонування*/
+    content: "";/*додається зміст якого не було*/
 
-    top: -27px;
-    left: -120px;
+    top: 5%;/*відстань від краю елемента до верхньої точки псевдоелемента*/
+    left: -60px;/*відстань від краю елемента до лівої точки псевдоелемента*/
 
-    width: 125px;
-    height: 114px;
+    width: 60px;/*ширина псевдоелемента*/
+    height: 60px;/*висота псевдоелемента*/
 
-    background-image: url("../img/done.png");
-    background-repeat: no-repeat;
+    background-image: url("../img/done.png");/*вказується фонове зображення*/
+    background-repeat: no-repeat;/*фонове зображення не повторюється*/
+    background-size: contain;/*фонове зображення повністю поміщається із збереженням пропорцій*/
   }
 
-  &:nth-child(2)::before {
-    top: -7px;
-
-    background-image: url("../img/done2.png");
+  &:nth-child(2)::before {/*псевдоелемент другого елемента списку*/
+    background-image: url("../img/done2.png");/*вказується фонове зображення*/
   }
 
-  &:nth-child(3)::before {
-    top: 3px;
-    left: -112px;
-
-    background-image: url("../img/done3.png");
+  &:nth-child(3)::before {/*псевдоелемент третього елемента списку*/
+    background-image: url("../img/done3.png");/*вказується фонове зображення*/
   }
 }
 
 .main-about__button {
-  margin-top: 70px;
-  margin-bottom: 40px;
+  margin: 0;/*обнулення зовнішніх відступів*/
+  margin-top: 30px;/*вказується верхній зовнішній відступ*/
+  margin-bottom: 20px;/*вказується нижній зовнішній відступ*/
+}
+
+@media (min-width: @desktop-width) {/*даний блок почне працювати коли ширина екрана буде більше 1170px*/
+  .main-about {
+    padding-top: 70px;/*вказується верхній внутрішній відступ*/
+  }
+
+  .main-about__wrapper {
+    flex-direction: row;/*горизонтальний напрямок flex елементів*/
+    align-items: flex-start;/*вирівнювання flex елементів*/
+
+    max-width: 1170px;/*максимальна ширина блока*/
+  }
+
+  .main-about__photo {
+    margin-top: 65px;/*вказується верхній зовнішній відступ*/
+
+    flex-basis: 40%;/*вказується основний розмір flex елемента*/
+  }
+
+  .main-about__block {
+    padding-left: 8%;/*вказується лівий внутрішній відступ*/
+
+    flex-basis: 50%;/*вказується основний розмір flex елемента*/
+  }
+
+  .main-about__title {
+    font-size: 50px;/*вказується розмір шрифту*/
+  }
+
+  .main-about__item {
+    &::before {/*описуються параметри псевдоелемента*/
+      top: -15%;/*відстань від краю елемента до верхньої точки псевдоелемента*/
+      left: -88px;/*відстань від краю елемента до лівої точки псевдоелемента*/
+
+      width: 90px;/*ширина псевдоелемента*/
+      height: 90px;/*висота псевдоелемента*/
+    }
+
+    &:nth-child(2)::before {/*псевдоелемент другого елемента списку*/
+      top: 10%;/*відстань від краю елемента до верхньої точки псевдоелемента*/
+    }
+
+    &:nth-child(3)::before {/*псевдоелемент третього елемента списку*/
+      top: 12%;/*відстань від краю елемента до верхньої точки псевдоелемента*/
+    }
+  }
+
+  .main-about__button {
+    margin-top: 50px;/*вказується верхній зовнішній відступ*/
+  }
 }

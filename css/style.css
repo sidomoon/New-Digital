@@ -1,3 +1,4 @@
+/*Початок. Підключення шрифтів*/
 @font-face {
   font-family: "Proxima Nova";
   font-style: normal;
@@ -34,46 +35,91 @@
   font-weight: bolder;
   src: url("../fonts/Source-Sans-Pro-Bold.woff2") format("woff2"), url("../fonts/Source-Sans-Pro-Bold.woff") format("woff");
 }
+/*Кінець. Підключення шрифтів*/
+/*Початок. Задається центрування, обнуляються зовнішні та внутрішні відступи.
+Вказується мінімальна ширина та шрифт за замовчуванням*/
 body {
   margin: 0 auto;
   padding: 0;
   min-width: 320px;
-  max-width: 1920px;
   font-family: "Proxima Nova", sans-serif;
   font-weight: bold;
   font-size: 17px;
   line-height: 29.13px;
   color: #ffffff;
 }
+/*Кінець. Задається центрування, обнуляються зовнішні та внутрішні відступи.
+Вказується мінімальна ширина та шрифт за замовчуванням*/
+/*Початок. Задання параметрів та поведінки кнопок*/
 .button {
   display: block;
+  /*задається блочний елемент*/
   margin: 0;
+  /*обнулення зовнішніх відступів*/
   padding: 12px 37px;
+  /*задаються внутрішні відступи*/
   font-family: "Source Sans Pro";
+  /*вказується шрифт*/
   font-weight: normal;
   font-size: 20px;
   line-height: 29.13px;
   color: #ffffff;
   border: none;
+  /*обнулюються грані*/
   -webkit-border-radius: 25px;
           border-radius: 25px;
+  /*радіус вуглів граней*/
   background-color: #fa4a33;
+  /*вказується колір фону*/
   -webkit-box-shadow: 8px 15px 14px rgba(88, 39, 39, 0.27);
           box-shadow: 8px 15px 14px rgba(88, 39, 39, 0.27);
+  /*задаються параметри тіні*/
   cursor: pointer;
+  /*тип курсору*/
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  /*анімація із затримкою пів секунди*/
 }
 .button:hover {
+  /*вказується поведінка при наведенні курсора*/
   background-color: #009ce3;
   -webkit-box-shadow: 0 0 24px rgba(88, 39, 39, 0.5);
           box-shadow: 0 0 24px rgba(88, 39, 39, 0.5);
 }
 .button:active {
+  /*вказується поведінка при кліці*/
   -webkit-box-shadow: 0 0 24px rgba(88, 39, 39, 0.9);
           box-shadow: 0 0 24px rgba(88, 39, 39, 0.9);
 }
+/*Кінець. Задання параметрів та поведінки кнопок*/
+/*Початок. Опис параметрів класу, що застосовується для приховування
+елементів які будуть доступні для "читалок"*/
+.visually-hidden {
+  margin: -1px;
+  /*вказуються зовнішні відступи*/
+  padding: 0;
+  /*обнулення внутрішніх відступів*/
+  position: absolute;
+  /*абсолютне позиціонування*/
+  width: 1px;
+  /*вказується ширина*/
+  height: 1px;
+  /*вказується висота*/
+  border: 0;
+  /*обнулення граней*/
+  white-space: nowrap;
+  /*пробіли між словами не беруться до уваги*/
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  /*вказується область видимості*/
+  clip: rect(0 0 0 0);
+  /*абсолютно позиціонованний елемент буде приховано*/
+  overflow: hidden;
+  /*все що виходить за межі елемента буде приховано*/
+}
+/*Кінець. Опис параметрів класу, що застосовується для приховування
+елементів які будуть доступні для "читалок"*/
 .main-header-contacts {
   margin: 0;
   padding: 0;
@@ -87,20 +133,22 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 .main-header-contacts__list-social {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
+  margin: 0 auto;
   margin-top: 10px;
-  margin-left: 19.2%;
   padding: 0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -130,15 +178,14 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  margin-left: 35%;
+  margin: 0 auto;
   margin-top: 11px;
   padding: 0;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
@@ -180,6 +227,43 @@ body {
   background-image: url("../img/EMAIL.png");
   background-repeat: no-repeat;
 }
+@media (min-width: 768px) {
+  .main-header-contacts__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .main-header-contacts__list-social {
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 20%;
+  }
+  .main-header-contacts__list {
+    margin: 0;
+    margin-top: 11px;
+    margin-right: 10%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+@media (min-width: 1170px) {
+  .main-header-contacts__wrapper {
+    margin: 0 auto;
+    max-width: 1170px;
+  }
+  .main-header-contacts__list-social {
+    margin-left: 10%;
+  }
+}
 .main-header-nav {
   margin: 0;
   padding: 0;
@@ -194,15 +278,14 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .main-header-nav__logo {
-  margin: 0;
-  margin-left: 21.8%;
+  margin: 0 auto;
   margin-top: 49px;
   padding: 0;
   font-family: "Montserrat";
@@ -216,8 +299,7 @@ body {
   color: #0099ff;
 }
 .main-header-nav__menu {
-  margin: 0;
-  margin-left: 15.3%;
+  margin: 0 auto;
   margin-top: 47px;
   padding: 0;
 }
@@ -228,11 +310,11 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
@@ -241,21 +323,6 @@ body {
 .main-header-nav__item {
   margin: 0;
   padding: 0;
-}
-.main-header-nav__item:nth-child(1) {
-  margin-right: 50px;
-}
-.main-header-nav__item:nth-child(2) {
-  margin-right: 52px;
-}
-.main-header-nav__item:nth-child(3) {
-  margin-right: 60px;
-}
-.main-header-nav__item:nth-child(4) {
-  margin-right: 57px;
-}
-.main-header-nav__item:nth-child(5) {
-  margin-right: 44px;
 }
 .main-header-nav__link {
   margin: 0;
@@ -269,6 +336,37 @@ body {
 .main-header-nav__link:hover {
   color: #009ce3;
 }
+@media (min-width: 768px) {
+  .main-header-nav__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .main-header-nav__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .main-header-nav__item {
+    margin-right: 15px;
+  }
+  .main-header-nav__item:last-child {
+    margin-right: 0;
+  }
+}
+@media (min-width: 1170px) {
+  .main-header-nav__wrapper {
+    margin: 0 auto;
+    max-width: 1170px;
+  }
+  .main-header-nav__item {
+    margin-right: 40px;
+  }
+}
 .main-header-title {
   margin: 0;
   padding: 0;
@@ -276,12 +374,15 @@ body {
 .main-header-title__wrapper {
   margin: 0;
   padding: 0;
+  padding-bottom: 40px;
   position: relative;
-  min-height: 702px;
   background-color: #009ce3;
   background-image: url("../img/background.png");
   background-repeat: no-repeat;
   background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover;
+  text-align: center;
 }
 .main-header-title__list {
   display: -webkit-box;
@@ -289,17 +390,12 @@ body {
   display: -ms-flexbox;
   display: flex;
   margin: 0;
-  margin-left: 1%;
   padding: 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
   list-style: none;
   text-decoration: none;
 }
@@ -308,52 +404,55 @@ body {
   padding: 0;
 }
 .main-header-title__item:nth-child(1) {
-  padding-top: 92px;
+  padding-top: 50px;
   font-family: "Montserrat Extra";
-  font-size: 80px;
-  line-height: 80px;
+  font-size: 70px;
+  line-height: 70px;
   color: #f8fcff;
 }
 .main-header-title__item:nth-child(2) {
   margin-top: 32px;
-  margin-left: 17px;
-  position: relative;
+  margin-left: 20px;
   font-family: "Montserrat Extra";
-  font-size: 50px;
-  line-height: 50px;
+  font-size: 40px;
+  line-height: 40px;
   color: #fa4a33;
   z-index: 1;
 }
-.main-header-title__item:nth-child(2)::before {
-  position: absolute;
-  content: "";
-  top: -13px;
-  left: -80px;
-  width: 410px;
-  height: 80px;
-  background-image: url("../img/arrow.png");
-  background-repeat: no-repeat;
-  z-index: -1;
-}
 .main-header-title__item:nth-child(3) {
   margin-top: 30px;
-  margin-left: 5px;
+  margin-left: 6px;
   font-family: "Source Sans Pro";
   font-weight: bold;
-  font-size: 38px;
+  font-size: 28px;
   line-height: 49.13px;
   color: #f8fcff;
-  text-align: center;
 }
 .main-header-title__item:nth-child(4) {
   margin-top: 52px;
   font-family: "Montserrat";
-  font-size: 36px;
-  line-height: 36px;
+  font-size: 26px;
+  line-height: 26px;
   color: #ffffff;
 }
 .main-header-title__item:nth-child(5) {
   margin-top: 52px;
+}
+.main-header-title__item span {
+  position: relative;
+}
+.main-header-title__item span::before {
+  position: absolute;
+  content: "";
+  top: -6px;
+  left: -55px;
+  width: 310px;
+  height: 60px;
+  background-image: url("../img/arrow.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+  z-index: -1;
 }
 .main-header-title__sub-list {
   display: -webkit-box;
@@ -362,11 +461,11 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
@@ -375,127 +474,273 @@ body {
 .main-header-title__sub-item {
   margin: 0;
   padding: 0;
+  padding-top: 30px;
 }
 .main-header-title__sub-item:first-child {
-  margin-left: 5px;
-  margin-right: 100px;
+  margin-top: 40px;
+  margin-bottom: 90px;
 }
 .main-header-title__sub-link {
   margin: 0;
   padding: 0;
-  padding-left: 30px;
   position: relative;
   font-family: "Source Sans Pro";
   font-weight: bolder;
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 20px;
+  line-height: 20px;
   color: #ffffff;
   text-decoration: none;
-}
-.main-header-title__sub-link:last-child {
-  margin-left: 72px;
 }
 .main-header-title__sub-link::before {
   position: absolute;
   content: "";
-  top: -15px;
-  left: -80px;
-  width: 80px;
-  height: 86px;
+  top: -90px;
+  left: 20px;
+  width: 100px;
+  height: 100px;
   background-image: url("../img/skype2.png");
   background-repeat: no-repeat;
-  -webkit-background-size: 155px auto;
-          background-size: 155px auto;
-  background-position: -28px -37px;
+  -webkit-background-size: contain;
+          background-size: contain;
 }
 .main-header-title__sub-link--mail::before {
-  width: 87px;
-  height: 105px;
+  left: 60px;
   background-image: url("../img/email2.png");
-  background-position: -30px -34px;
+}
+@media (min-width: 768px) {
+  .main-header-title__wrapper {
+    padding-bottom: 80px;
+  }
+  .main-header-title__sub-list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .main-header-title__sub-item {
+    padding: 0;
+    padding-left: 50px;
+  }
+  .main-header-title__sub-item:first-child {
+    margin: 0;
+    margin-right: 10%;
+  }
+  .main-header-title__sub-link::before {
+    top: -35px;
+    left: -90px;
+  }
+  .main-header-title__sub-link--mail::before {
+    left: -85px;
+  }
 }
 .main-about {
   margin: 0;
+  /*обнулення зовнішніх відступів*/
   padding: 0;
+  /*обнулення внутрішніх відступів*/
+  padding-top: 30px;
+  /*вказується верхній внутрішній відступ*/
   background-color: #ffffff;
+  /*вказується колір фону*/
 }
 .main-about__wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  margin-left: 7.8%;
-  padding: 0;
-  padding-top: 142px;
-  -webkit-box-orient: horizontal;
+  /*задається flex об'єкт*/
+  margin: 0 auto;
+  /*центрування за допомогою зовнішніх відступів*/
+  padding: 0 10px;
+  /*задаються внутрішні відступи*/
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /*вертикальний напрямок flex елементів*/
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  /*flex елементи переносяться*/
+  max-width: 500px;
+  /*вказується максимальна ширина*/
 }
 .main-about__photo {
   margin: 0;
-  margin-top: 44px;
+  /*обнулення зовнішніх відступів*/
   padding: 0;
+  /*обнулення внутрішніх відступів*/
+  width: 100%;
+  /*вказується ширина блока*/
+  height: auto;
+  /*вказується висота*/
 }
 .main-about__block {
-  margin: 0;
-  margin-left: 126px;
+  margin: 0 5px;
+  /*вказуються зовнішні відступи*/
   padding: 0;
+  /*обнулення внутрішніх відступів*/
+  padding-left: 15%;
+  /*вказується лівий внутрішній відступ*/
 }
 .main-about__title {
   margin: 0;
+  /*обнулення зовнішніх відступів*/
+  margin-top: 20px;
+  /*вказується верхній зовнішній відступ*/
   padding: 0;
+  /*обнулення внутрішніх відступів*/
   font-family: "Montserrat Extra";
-  font-size: 50px;
+  /*вказується шрифт*/
+  font-size: 40px;
+  /*вказується розмір шрифту*/
   line-height: 51.81px;
+  /*вказується висота стрічки*/
   color: #3c3c3c;
+  /*вказується колір шрифту*/
 }
 .main-about__list {
   margin: 0;
-  margin-top: 48px;
-  margin-left: 2px;
+  /*обнулення зовнішніх відступів*/
+  margin-top: 30px;
+  /*вказується верхній зовнішній відступ*/
   padding: 0;
-  max-width: 630px;
+  /*обнулення внутрішніх відступів*/
   list-style: none;
+  /*відміняється оформлення списку*/
 }
 .main-about__item {
   margin: 0;
-  margin-top: 29px;
+  /*обнулення зовнішніх відступів*/
+  margin-top: 20px;
+  /*вказується верхній зовнішній відступ*/
   padding: 0;
+  /*обнулення внутрішніх відступів*/
   position: relative;
+  /*блок позиціонується відносно*/
   font-family: "Source Sans Pro";
+  /*вказується шрифт*/
   font-weight: bold;
+  /*вказується жирний шрифт*/
   font-size: 19px;
+  /*вказується розмір шрифту*/
   line-height: 29px;
+  /*вказується висота стрічки*/
   color: #4f4f4f;
+  /*вказується колір шрифту*/
 }
 .main-about__item::before {
+  /*описуються параметри псевдоелемента*/
   position: absolute;
+  /*абсолютне позиціонування*/
   content: "";
-  top: -27px;
-  left: -120px;
-  width: 125px;
-  height: 114px;
+  /*додається зміст якого не було*/
+  top: 5%;
+  /*відстань від краю елемента до верхньої точки псевдоелемента*/
+  left: -60px;
+  /*відстань від краю елемента до лівої точки псевдоелемента*/
+  width: 60px;
+  /*ширина псевдоелемента*/
+  height: 60px;
+  /*висота псевдоелемента*/
   background-image: url("../img/done.png");
+  /*вказується фонове зображення*/
   background-repeat: no-repeat;
+  /*фонове зображення не повторюється*/
+  -webkit-background-size: contain;
+          background-size: contain;
+  /*фонове зображення повністю поміщається із збереженням пропорцій*/
 }
 .main-about__item:nth-child(2)::before {
-  top: -7px;
+  /*псевдоелемент другого елемента списку*/
   background-image: url("../img/done2.png");
+  /*вказується фонове зображення*/
 }
 .main-about__item:nth-child(3)::before {
-  top: 3px;
-  left: -112px;
+  /*псевдоелемент третього елемента списку*/
   background-image: url("../img/done3.png");
+  /*вказується фонове зображення*/
 }
 .main-about__button {
-  margin-top: 70px;
-  margin-bottom: 40px;
+  margin: 0;
+  /*обнулення зовнішніх відступів*/
+  margin-top: 30px;
+  /*вказується верхній зовнішній відступ*/
+  margin-bottom: 20px;
+  /*вказується нижній зовнішній відступ*/
+}
+@media (min-width: 1170px) {
+  /*даний блок почне працювати коли ширина екрана буде більше 1170px*/
+  .main-about {
+    padding-top: 70px;
+    /*вказується верхній внутрішній відступ*/
+  }
+  .main-about__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    /*горизонтальний напрямок flex елементів*/
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    /*вирівнювання flex елементів*/
+    max-width: 1170px;
+    /*максимальна ширина блока*/
+  }
+  .main-about__photo {
+    margin-top: 65px;
+    /*вказується верхній зовнішній відступ*/
+    -webkit-flex-basis: 40%;
+        -ms-flex-preferred-size: 40%;
+            flex-basis: 40%;
+    /*вказується основний розмір flex елемента*/
+  }
+  .main-about__block {
+    padding-left: 8%;
+    /*вказується лівий внутрішній відступ*/
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
+    /*вказується основний розмір flex елемента*/
+  }
+  .main-about__title {
+    font-size: 50px;
+    /*вказується розмір шрифту*/
+  }
+  .main-about__item::before {
+    /*описуються параметри псевдоелемента*/
+    top: -15%;
+    /*відстань від краю елемента до верхньої точки псевдоелемента*/
+    left: -88px;
+    /*відстань від краю елемента до лівої точки псевдоелемента*/
+    width: 90px;
+    /*ширина псевдоелемента*/
+    height: 90px;
+    /*висота псевдоелемента*/
+  }
+  .main-about__item:nth-child(2)::before {
+    /*псевдоелемент другого елемента списку*/
+    top: 10%;
+    /*відстань від краю елемента до верхньої точки псевдоелемента*/
+  }
+  .main-about__item:nth-child(3)::before {
+    /*псевдоелемент третього елемента списку*/
+    top: 12%;
+    /*відстань від краю елемента до верхньої точки псевдоелемента*/
+  }
+  .main-about__button {
+    margin-top: 50px;
+    /*вказується верхній зовнішній відступ*/
+  }
 }
 .main-start {
   margin: 0;
@@ -503,18 +748,18 @@ body {
   background-color: #ffffff;
 }
 .main-start__wrapper {
-  margin: 0;
-  margin-top: 68px;
-  margin-left: 1%;
-  margin-bottom: 100px;
-  padding: 0;
+  margin: 0 auto;
+  padding: 0 10px;
+  padding-top: 68px;
+  padding-bottom: 80px;
+  max-width: 500px;
   text-align: center;
 }
 .main-start__title {
   margin: 0;
   padding: 0;
   font-family: "Montserrat Extra";
-  font-size: 50px;
+  font-size: 40px;
   line-height: 51.81px;
   color: #3c3c3c;
 }
@@ -527,14 +772,13 @@ body {
   display: -ms-flexbox;
   display: flex;
   margin: 0;
-  margin-top: 70px;
-  margin-left: 18.8%;
+  margin-top: 20px;
   padding: 0;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
@@ -543,66 +787,91 @@ body {
 .main-start__item {
   margin: 0;
   padding: 0;
-  padding-top: 150px;
-  position: relative;
   font-family: "Source Sans Pro";
   font-weight: bold;
   font-size: 19px;
   line-height: 29.13px;
   color: #4f4f4f;
 }
-.main-start__item:nth-child(1) {
-  margin-right: 5.6%;
+.main-start__text {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  padding-top: 130px;
+  position: relative;
 }
-.main-start__item:nth-child(2) {
-  margin-right: 4.4%;
-}
-.main-start__item:nth-child(3) {
-  margin-right: 1.8%;
-}
-.main-start__item::before {
+.main-start__text::before {
   position: absolute;
   content: "";
   top: 22px;
-  left: 27px;
-  width: 104px;
-  height: 105px;
+  left: 60px;
+  width: 100px;
+  height: 100px;
   background-image: url("../img/content.png");
   background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
 }
-.main-start__item:nth-child(2)::before {
-  top: 10px;
-  left: 51px;
-  width: 121px;
-  height: 117px;
+.main-start__item:nth-child(2) .main-start__text::before {
+  left: 80px;
   background-image: url("../img/pay.png");
 }
-.main-start__item:nth-child(3)::before {
-  top: 7px;
-  left: 111px;
-  width: 98px;
-  height: 119px;
+.main-start__item:nth-child(3) .main-start__text::before {
+  left: 40%;
   background-image: url("../img/infographics.png");
 }
-.main-start__item:nth-child(4)::before {
-  top: 15px;
-  left: 98px;
-  width: 105px;
-  height: 110px;
+.main-start__item:nth-child(4) .main-start__text::before {
+  left: 40%;
   background-image: url("../img/discounts.png");
+}
+.main-start__text br {
+  display: none;
+}
+@media (min-width: 768px) {
+  .main-start__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .main-start__item {
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
+  }
+}
+@media (min-width: 1170px) {
+  .main-start__wrapper {
+    max-width: 1170px;
+  }
+  .main-start__title {
+    font-size: 50px;
+  }
+  .main-start__list {
+    margin-top: 30px;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+  }
+  .main-start__item {
+    -webkit-flex-basis: 22%;
+        -ms-flex-preferred-size: 22%;
+            flex-basis: 22%;
+  }
 }
 .main-contact {
   margin: 0;
   padding: 0;
-  min-height: 325px;
   background-color: #016ed0;
   background-image: url("../img/background2.png");
   background-repeat: no-repeat;
   background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover;
 }
 .main-contact__wrapper {
   margin: 0;
-  margin-left: 1%;
   padding: 0;
   padding-top: 6px;
   text-align: center;
@@ -612,7 +881,7 @@ body {
   padding: 0;
   padding-top: 50px;
   font-family: "Montserrat Extra";
-  font-size: 50px;
+  font-size: 40px;
   line-height: 51.81px;
   color: #ffffff;
 }
@@ -623,23 +892,22 @@ body {
   display: flex;
   margin: 0;
   margin-top: 68px;
-  margin-left: 17.7%;
   padding: 0;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   list-style: none;
 }
 .main-contact__item {
-  margin: 0;
-  margin-right: 7%;
+  margin: 0 auto;
   padding: 0;
-  padding-left: 160px;
+  padding-top: 100px;
+  padding-bottom: 50px;
   position: relative;
   font-family: "Source Sans Pro";
   font-weight: bold;
@@ -648,40 +916,72 @@ body {
   color: #ffffff;
   text-align: left;
 }
-.main-contact__item:nth-child(2) {
-  margin-right: 5.3%;
-  padding-top: 20px;
-}
-.main-contact__item:nth-child(3) {
-  padding-top: 20px;
-}
 .main-contact__item::before {
   position: absolute;
   content: "";
   top: -44px;
-  left: 0;
-  width: 176px;
-  height: 177px;
+  left: 30px;
+  width: 150px;
+  height: 150px;
   background-image: url("../img/contact-address.png");
   background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
 }
 .main-contact__item:nth-child(2)::before {
-  top: -60px;
-  left: 5px;
-  width: 167px;
-  height: 188px;
+  top: -50px;
+  left: 40px;
   background-image: url("../img/contact-mail.png");
 }
 .main-contact__item:nth-child(3)::before {
   top: -44px;
-  left: 2px;
-  width: 175px;
-  height: 176px;
+  left: -10px;
   background-image: url("../img/contact-skype.png");
 }
 .main-contact__link {
   text-decoration: none;
   color: #ffffff;
+}
+@media (min-width: 768px) {
+  .main-contact__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+@media (min-width: 1170px) {
+  .main-contact__wrapper {
+    margin: 0 auto;
+    max-width: 1170px;
+  }
+  .main-contact__title {
+    font-size: 50px;
+  }
+  .main-contact__list {
+    margin: 0;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main-contact__item {
+    padding-top: 40px;
+    padding-left: 80px;
+  }
+  .main-contact__item::before {
+    top: 10px;
+    left: -55px;
+  }
+  .main-contact__item:nth-child(2)::before {
+    top: -22px;
+    left: -45px;
+  }
+  .main-contact__item:nth-child(3)::before {
+    top: -15px;
+    left: -55px;
+  }
 }
 .main-why {
   margin: 0;
@@ -693,36 +993,40 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  margin-left: 19.9%;
-  padding: 0;
-  padding-top: 155px;
-  -webkit-box-orient: horizontal;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 0 10px;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  max-width: 500px;
 }
 .main-why__block {
   margin: 0;
-  padding: 0;
+  margin-top: 30px;
+  padding: 0 10px;
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+      -ms-flex-order: 2;
+          order: 2;
 }
 .main-why__title {
   margin: 0;
   padding: 0;
   font-family: "Montserrat Extra";
-  font-size: 50px;
+  font-size: 40px;
   line-height: 51.81px;
   color: #3c3c3c;
 }
 .main-why__text {
   margin: 0;
-  margin-top: 64px;
+  margin-top: 30px;
   padding: 0;
-  max-width: 700px;
   font-family: "Source Sans Pro";
   font-weight: bold;
   font-size: 19px;
@@ -730,116 +1034,303 @@ body {
   color: #4f4f4f;
 }
 .main-why__text:nth-child(3) {
-  margin-top: 35px;
+  margin-top: 30px;
 }
 .main-why__button {
-  margin-top: 70px;
+  margin-top: 30px;
   margin-bottom: 40px;
 }
 .main-why__photo {
   margin: 0;
-  margin-top: 80px;
-  margin-left: 7.5%;
+  margin-top: 40px;
   padding: 0;
+  width: 100%;
+  height: auto;
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+      -ms-flex-order: 1;
+          order: 1;
+}
+@media (min-width: 1170px) {
+  .main-why {
+    padding-top: 40px;
+  }
+  .main-why__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    max-width: 1170px;
+  }
+  .main-why__block {
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .main-why__title {
+    font-size: 50px;
+  }
+  .main-why__text {
+    margin-top: 40px;
+  }
+  .main-why__button {
+    margin-top: 50px;
+  }
+  .main-why__photo {
+    margin-top: 100px;
+    padding-left: 5%;
+    -webkit-flex-basis: 42%;
+        -ms-flex-preferred-size: 42%;
+            flex-basis: 42%;
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+  }
 }
 .main-benefits {
   margin: 0;
+  /*обнулення зовнішніх відступів*/
   padding: 0;
+  /*обнулення внутрішніх відступів*/
   background-color: #ffffff;
+  /*вказується колір фону*/
 }
 .main-benefits__wrapper {
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  /*центрування за допомогою зовнішніх відступів*/
+  margin-top: 30px;
+  /*вказується верхній зовнішній відступ*/
+  padding: 0 10px;
+  /*задаються внутрішні відступи*/
+  max-width: 500px;
+  /*вказується максимальна ширина*/
+  text-align: center;
+  /*елементи центруються*/
 }
 .main-benefits__title {
   margin: 0;
-  margin-left: 19.8%;
+  /*обнулення зовнішніх відступів*/
   padding: 0;
-  padding-top: 128px;
+  /*обнулення внутрішніх відступів*/
   font-family: "Montserrat Extra";
-  font-size: 50px;
+  /*вказується шрифт*/
+  font-size: 40px;
+  /*вказується розмір шрифту*/
   line-height: 51.81px;
+  /*вказується висота стрічки*/
   color: #3c3c3c;
+  /*вказується колір шрифту*/
 }
 .main-benefits__list {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  /*задається flex об'єкт*/
   margin: 0;
-  margin-top: 92px;
-  margin-left: 19.8%;
+  /*обнулення зовнішніх відступів*/
+  margin-top: 40px;
+  /*вказується верхній зовнішній відступ*/
   padding: 0;
-  -webkit-box-orient: horizontal;
+  /*обнулення внутрішніх відступів*/
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /*вертикальний напрямок flex елементів*/
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  /*flex елементи переносяться*/
   list-style: none;
+  /*відміняється оформлення списку*/
 }
 .main-benefits__item {
   margin: 0;
-  margin-right: 1.8%;
-  margin-bottom: 92px;
+  /*обнулення зовнішніх відступів*/
+  margin-bottom: 40px;
+  /*вказується нижній зовнішній відступ*/
   padding: 0;
-  padding-left: 130px;
-  position: relative;
-  -webkit-flex-basis: 30%;
-      -ms-flex-preferred-size: 30%;
-          flex-basis: 30%;
-}
-.main-benefits__item::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 104px;
-  height: 105px;
-  background-image: url("../img/benefits-promote.png");
-  background-repeat: no-repeat;
-}
-.main-benefits__item:nth-child(2)::before {
-  top: -15px;
-  left: -8px;
-  width: 101px;
-  height: 106px;
-  background-image: url("../img/benefits-rep.png");
-}
-.main-benefits__item:nth-child(3)::before {
-  top: -4px;
-  left: 25px;
-  width: 92px;
-  height: 120px;
-  background-image: url("../img/benefits-search.png");
-}
-.main-benefits__item:nth-child(4)::before {
-  top: -4px;
-  left: -5px;
-  width: 97px;
-  height: 119px;
-  background-image: url("../img/benefits-money.png");
+  /*обнулення внутрішніх відступів*/
 }
 .main-benefits__item-title {
+  display: inline-block;
+  /*задається рядковий елемент*/
   margin: 0;
+  /*обнулення зовнішніх відступів*/
   padding: 0;
+  /*обнулення внутрішніх відступів*/
+  padding-top: 110px;
+  /*вказується верхній внутрішній відступ*/
+  position: relative;
+  /*блок позиціонується відносно*/
   font-family: "Source Sans Pro";
+  /*вказується шрифт*/
   font-weight: bold;
+  /*вказується жирний шрифт*/
   font-size: 30px;
+  /*вказується розмір шрифту*/
   line-height: 30px;
+  /*вказується висота стрічки*/
   color: #0d3693;
+  /*вказується колір шрифту*/
+}
+.main-benefits__item-title::before {
+  position: absolute;
+  /*абсолютне позиціонування*/
+  content: "";
+  /*додається зміст якого не було*/
+  top: 0;
+  /*відстань від краю елемента до верхньої точки псевдоелемента*/
+  left: 70px;
+  /*відстань від краю елемента до лівої точки псевдоелемента*/
+  width: 100px;
+  /*ширина псевдоелемента*/
+  height: 100px;
+  /*висота псевдоелемента*/
+  background-image: url("../img/benefits-promote.png");
+  /*вказується фонове зображення*/
+  background-repeat: no-repeat;
+  /*фонове зображення не повторюється*/
+  -webkit-background-size: contain;
+          background-size: contain;
+  /*фонове зображення повністю поміщається із збереженням пропорцій*/
+}
+.main-benefits__item:nth-child(2) .main-benefits__item-title::before {
+  /*псевдоелемент другого елемента списку*/
+  left: 60px;
+  /*відстань від краю елемента до лівої точки псевдоелемента*/
+  background-image: url("../img/benefits-rep.png");
+  /*вказується фонове зображення*/
+}
+.main-benefits__item:nth-child(3) .main-benefits__item-title::before {
+  /*псевдоелемент третього елемента списку*/
+  left: 60px;
+  /*відстань від краю елемента до лівої точки псевдоелемента*/
+  background-image: url("../img/benefits-search.png");
+  /*вказується фонове зображення*/
+}
+.main-benefits__item:nth-child(4) .main-benefits__item-title::before {
+  /*псевдоелемент четвертого елемента списку*/
+  left: 40px;
+  /*відстань від краю елемента до лівої точки псевдоелемента*/
+  background-image: url("../img/benefits-money.png");
+  /*вказується фонове зображення*/
 }
 .main-benefits__item-text {
   margin: 0;
-  margin-top: 2px;
+  /*обнулення зовнішніх відступів*/
   padding: 0;
+  /*обнулення внутрішніх відступів*/
   font-family: "Source Sans Pro";
+  /*вказується шрифт*/
   font-weight: bold;
+  /*вказується жирний шрифт*/
   font-size: 19px;
+  /*вказується розмір шрифту*/
   line-height: 29.13px;
+  /*вказується висота стрічки*/
   color: #4f4f4f;
+  /*вказується колір шрифту*/
+}
+.main-benefits__item-text br {
+  /*елементам br задається властивість*/
+  display: none;
+  /*елемент приховується*/
+}
+@media (min-width: 768px) {
+  /*даний блок почне працювати коли ширина екрана буде більше 768px*/
+  .main-benefits__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    /*горизонтальний напрямок flex елементів*/
+  }
+  .main-benefits__item {
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
+    /*вказується основний розмір flex елемента*/
+  }
+}
+@media (min-width: 1170px) {
+  /*даний блок почне працювати коли ширина екрана буде більше 1170px*/
+  .main-benefits {
+    padding-top: 40px;
+    /*вказується верхній внутрішній відступ*/
+  }
+  .main-benefits__wrapper {
+    max-width: 1170px;
+    /*максимальна ширина блока*/
+    text-align: left;
+    /*елементи вирівнюються по лівому краю*/
+  }
+  .main-benefits__title {
+    font-size: 44px;
+    /*вказується розмір шрифту*/
+  }
+  .main-benefits__list {
+    margin-top: 50px;
+    /*вказується верхній зовнішній відступ*/
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    /*вільне місце розподіляється між flex елементами*/
+  }
+  .main-benefits__item {
+    margin-top: 20px;
+    /*вказується верхній зовнішній відступ*/
+    padding-left: 120px;
+    /*вказується лівий внутрішній відступ*/
+    -webkit-flex-basis: 32%;
+        -ms-flex-preferred-size: 32%;
+            flex-basis: 32%;
+    /*вказується основний розмір flex елемента*/
+  }
+  .main-benefits__item-title {
+    padding: 0;
+    /*обнулення внутрішніх відступів*/
+  }
+  .main-benefits__item-title::before {
+    top: 4px;
+    /*відстань від краю елемента до верхньої точки псевдоелемента*/
+    left: -120px;
+    /*відстань від краю елемента до лівої точки псевдоелемента*/
+  }
+  .main-benefits__item:nth-child(2) .main-benefits__item-title::before {
+    /*псевдоелемент другого елемента списку*/
+    top: -5px;
+    /*відстань від краю елемента до верхньої точки псевдоелемента*/
+    left: -125px;
+    /*відстань від краю елемента до лівої точки псевдоелемента*/
+  }
+  .main-benefits__item:nth-child(3) .main-benefits__item-title::before {
+    /*псевдоелемент третього елемента списку*/
+    top: 2px;
+    /*відстань від краю елемента до верхньої точки псевдоелемента*/
+    left: -90px;
+    /*відстань від краю елемента до лівої точки псевдоелемента*/
+  }
+  .main-benefits__item:nth-child(4) .main-benefits__item-title::before {
+    /*псевдоелемент четвертого елемента списку*/
+    top: 10px;
+    /*відстань від краю елемента до верхньої точки псевдоелемента*/
+    left: -110px;
+    /*відстань від краю елемента до лівої точки псевдоелемента*/
+  }
 }
 .main-faq {
   margin: 0;
@@ -850,17 +1341,17 @@ body {
   background-position: top right;
 }
 .main-faq__wrapper {
-  margin: 0;
-  margin-left: 25.3%;
+  margin: 0 auto;
   padding: 0;
   padding-top: 55px;
-  max-width: 773px;
+  padding-bottom: 67px;
+  max-width: 500px;
 }
 .main-faq__title {
-  margin: 0;
+  margin: 0 5%;
   padding: 0;
   font-family: "Montserrat Extra";
-  font-size: 50px;
+  font-size: 40px;
   line-height: 51.81px;
   color: #3c3c3c;
 }
@@ -868,10 +1359,9 @@ body {
   margin: 0;
   margin-top: 55px;
   padding: 0;
-  padding-bottom: 67px;
 }
 .main-faq__item {
-  margin: 0;
+  margin: 0 5%;
   margin-bottom: 28px;
   padding: 0;
   border-bottom: 2px solid rgba(79, 79, 79, 0.2);
@@ -883,10 +1373,11 @@ body {
   margin: 0;
   margin-bottom: 25px;
   padding: 0;
+  padding-right: 5px;
   position: relative;
   font-family: "Source Sans Pro";
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 30px;
   color: #4f4f4f;
   cursor: pointer;
@@ -933,7 +1424,7 @@ body {
 .main-faq__item-text {
   margin: 0;
   margin-top: -13px;
-  margin-left: 3px;
+  margin-right: 12%;
   margin-bottom: 20px;
   padding: 0;
   font-family: "Source Sans Pro";
@@ -948,6 +1439,26 @@ body {
 .main-faq__item-title--open + .main-faq__item-text {
   display: block;
 }
+@media (min-width: 1170px) {
+  .main-faq {
+    padding-top: 20px;
+  }
+  .main-faq__wrapper {
+    padding-left: 15%;
+    max-width: 1170px;
+  }
+  .main-faq__title {
+    margin: 0;
+    font-size: 50px;
+  }
+  .main-faq__list {
+    max-width: 630px;
+  }
+  .main-faq__item {
+    margin: 0;
+    margin-bottom: 28px;
+  }
+}
 .main-post {
   margin: 0;
   padding: 0;
@@ -958,43 +1469,40 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  margin-left: 9.7%;
-  padding: 0;
-  padding-top: 122px;
-  padding-bottom: 40px;
-  -webkit-box-orient: horizontal;
+  margin: 0 auto;
+  padding: 0 10px;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  max-width: 500px;
 }
 .main-post__photo {
   margin: 0;
-  margin-top: 42px;
   padding: 0;
+  width: 100%;
+  height: auto;
 }
 .main-post__block {
-  margin: 0;
-  margin-left: 5.5%;
+  margin: 0 10px;
+  margin-top: 30px;
   padding: 0;
-  max-width: 650px;
 }
 .main-post__title {
   margin: 0;
   padding: 0;
   font-family: "Montserrat Extra";
-  font-size: 50px;
+  font-size: 40px;
   line-height: 61.81px;
   color: #3c3c3c;
 }
 .main-post__text {
   margin: 0;
-  margin-top: 100px;
-  margin-left: 2px;
+  margin-top: 20px;
   padding: 0;
   font-family: "Source Sans Pro";
   font-weight: bold;
@@ -1005,17 +1513,56 @@ body {
 .main-post__button {
   margin-top: 40px;
 }
+@media (min-width: 1170px) {
+  .main-post {
+    padding-top: 20px;
+  }
+  .main-post__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    max-width: 1170px;
+  }
+  .main-post__photo {
+    margin-top: 40px;
+    -webkit-flex-basis: 40%;
+        -ms-flex-preferred-size: 40%;
+            flex-basis: 40%;
+  }
+  .main-post__block {
+    margin: 0;
+    padding-left: 7%;
+    -webkit-flex-basis: 52%;
+        -ms-flex-preferred-size: 52%;
+            flex-basis: 52%;
+  }
+  .main-post__title {
+    font-size: 50px;
+  }
+  .main-post__text {
+    margin-top: 60px;
+  }
+  .main-post__button {
+    margin-top: 50px;
+  }
+}
 .main-option {
   margin: 0;
   padding: 0;
+  padding-bottom: 97px;
   background-color: #ffffff;
 }
 .main-option__wrapper {
-  margin: 0;
-  margin-top: 168px;
-  margin-left: 19.3%;
-  padding: 0;
-  padding-bottom: 97px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 0 10px;
+  max-width: 500px;
 }
 .main-option__list {
   display: -webkit-box;
@@ -1024,61 +1571,52 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
 }
 .main-option__item {
   margin: 0;
-  margin-right: 7.5%;
+  margin-bottom: 20px;
   padding: 0;
-  padding-top: 150px;
-  position: relative;
   text-align: center;
 }
-.main-option__item:nth-child(2) {
-  margin-right: 7.2%;
-}
-.main-option__item:last-child {
-  margin-right: 0;
-}
-.main-option__item::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 93px;
-  width: 120px;
-  height: 112px;
-  background-image: url("../img/option-guest.png");
-  background-repeat: no-repeat;
-}
-.main-option__item:nth-child(2)::before {
-  top: -9px;
-  left: 99px;
-  width: 115px;
-  height: 119px;
-  background-image: url("../img/option-news.png");
-}
-.main-option__item:nth-child(3)::before {
-  top: 2px;
-  left: 106px;
-  width: 109px;
-  height: 114px;
-  background-image: url("../img/option-edu.png");
-}
 .main-option__item-title {
+  display: inline-block;
   margin: 0;
   padding: 0;
+  padding-top: 120px;
+  position: relative;
   font-family: "Source Sans Pro";
   font-weight: bold;
   font-size: 24px;
   line-height: 29.13px;
   color: #0d3693;
+}
+.main-option__item-title::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 100px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../img/option-guest.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+}
+.main-option__item:nth-child(2) .main-option__item-title::before {
+  left: 60px;
+  background-image: url("../img/option-news.png");
+}
+.main-option__item:nth-child(3) .main-option__item-title::before {
+  left: 20px;
+  background-image: url("../img/option-edu.png");
 }
 .main-option__item-price {
   margin: 0;
@@ -1098,6 +1636,37 @@ body {
   line-height: 29.13px;
   color: #4f4f4f;
 }
+.main-option__item-text br {
+  display: none;
+}
+@media (min-width: 1170px) {
+  .main-option {
+    padding-top: 70px;
+    padding-bottom: 60px;
+  }
+  .main-option__wrapper {
+    max-width: 1170px;
+  }
+  .main-option__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .main-option__item {
+    -webkit-flex-basis: 30%;
+        -ms-flex-preferred-size: 30%;
+            flex-basis: 30%;
+  }
+  .main-option__item-text br {
+    display: inline-block;
+  }
+}
 .main-footer {
   margin: 0;
   padding: 0;
@@ -1108,19 +1677,20 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  padding: 0;
-  -webkit-box-orient: horizontal;
+  margin: 0 auto;
+  padding: 0 5%;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 .main-footer__title {
-  margin: 0;
-  padding: 100px 0;
-  padding-top: 110px;
-  padding-left: 19.7%;
+  margin: 0 auto;
+  padding: 50px 0;
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 36px;
@@ -1132,14 +1702,13 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  margin-left: 7.7%;
-  padding: 100px 0;
-  -webkit-box-orient: horizontal;
+  margin: 0 auto;
+  padding: 0;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
@@ -1147,11 +1716,7 @@ body {
 }
 .main-footer__item {
   margin: 0;
-  margin-right: 38px;
   padding: 0;
-}
-.main-footer__item:last-child {
-  margin-right: 0;
 }
 .main-footer__link {
   margin: 0;
@@ -1168,9 +1733,8 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  margin-left: 7.5%;
-  padding: 100px 0;
+  margin: 20px auto;
+  padding: 0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
@@ -1192,4 +1756,39 @@ body {
 .main-footer__link-social {
   margin: 0;
   padding: 0;
+}
+@media (min-width: 768px) {
+  .main-footer__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .main-footer__list {
+    margin-top: 50px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .main-footer__item {
+    margin-right: 15px;
+  }
+  .main-footer__list-social {
+    margin-top: 50px;
+  }
+}
+@media (min-width: 1170px) {
+  .main-footer {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+  .main-footer__wrapper {
+    max-width: 1170px;
+  }
+  .main-footer__item {
+    margin-right: 40px;
+  }
 }

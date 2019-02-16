@@ -1,50 +1,26 @@
-var content = document.querySelectorAll('.main-faq__item-title');
-var triggerOne = document.querySelector('.main-faq__item-title--one');
-var triggerTwo = document.querySelector('.main-faq__item-title--two');
-var triggerThree = document.querySelector('.main-faq__item-title--three');
-var triggerFour = document.querySelector('.main-faq__item-title--four');
+//Плавний скролл до якорів
+var $page = $('html, body');
 
-for (var i = 0; i < content.length; i++) {
-  content[i].classList.add('main-faq__item-title--close');
-  content[i].classList.remove('main-faq__item-title--open');
+$('a[href*="#"]').click(function() {
+  $page.animate({
+    scrollTop: $($.attr(this, 'href')).offset().top
+    }, 700);
+    return false;
+});
+//Плавний скролл до якорів
+
+//Аккордеон
+$('.main-faq__list .main-faq__item-title').removeClass('main-faq__item-title--open').addClass('main-faq__item-title--close');
+
+$('.main-faq__list').on('click', '.main-faq__item-title', function() {
+  $('.main-faq__list .main-faq__item-title').removeClass('main-faq__item-title--open').addClass('main-faq__item-title--close');
+  $(this).addClass('main-faq__item-title--open').removeClass('main-faq__item-title--close');
+});
+
+$('.main-faq__item-title').on('click', trigger);
+
+function trigger() {
+  $('.main-faq__item-text').not($(this).next()).slideUp(400);
+  $(this).next().slideToggle(400);
 }
-
-triggerOne.addEventListener('click', function() {
-  if (triggerOne.classList.contains('main-faq__item-title--close')) {
-    triggerOne.classList.remove('main-faq__item-title--close');
-    triggerOne.classList.add('main-faq__item-title--open');
-  } else {
-    triggerOne.classList.add('main-faq__item-title--close');
-    triggerOne.classList.remove('main-faq__item-title--open');
-  }
-});
-
-triggerTwo.addEventListener('click', function() {
-  if (triggerTwo.classList.contains('main-faq__item-title--close')) {
-    triggerTwo.classList.remove('main-faq__item-title--close');
-    triggerTwo.classList.add('main-faq__item-title--open');
-  } else {
-    triggerTwo.classList.add('main-faq__item-title--close');
-    triggerTwo.classList.remove('main-faq__item-title--open');
-  }
-});
-
-triggerThree.addEventListener('click', function() {
-  if (triggerThree.classList.contains('main-faq__item-title--close')) {
-    triggerThree.classList.remove('main-faq__item-title--close');
-    triggerThree.classList.add('main-faq__item-title--open');
-  } else {
-    triggerThree.classList.add('main-faq__item-title--close');
-    triggerThree.classList.remove('main-faq__item-title--open');
-  }
-});
-
-triggerFour.addEventListener('click', function() {
-  if (triggerFour.classList.contains('main-faq__item-title--close')) {
-    triggerFour.classList.remove('main-faq__item-title--close');
-    triggerFour.classList.add('main-faq__item-title--open');
-  } else {
-    triggerFour.classList.add('main-faq__item-title--close');
-    triggerFour.classList.remove('main-faq__item-title--open');
-  }
-});
+//Аккордеон

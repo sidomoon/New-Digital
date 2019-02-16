@@ -8,19 +8,20 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  padding: 0;
-  -webkit-box-orient: horizontal;
+  margin: 0 auto;
+  padding: 0 5%;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 .main-footer__title {
-  margin: 0;
-  padding: 100px 0;
-  padding-top: 110px;
-  padding-left: 19.7%;
+  margin: 0 auto;
+  padding: 50px 0;
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 36px;
@@ -32,14 +33,13 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  margin-left: 7.7%;
-  padding: 100px 0;
-  -webkit-box-orient: horizontal;
+  margin: 0 auto;
+  padding: 0;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
@@ -47,11 +47,7 @@
 }
 .main-footer__item {
   margin: 0;
-  margin-right: 38px;
   padding: 0;
-}
-.main-footer__item:last-child {
-  margin-right: 0;
 }
 .main-footer__link {
   margin: 0;
@@ -68,9 +64,8 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  margin-left: 7.5%;
-  padding: 100px 0;
+  margin: 20px auto;
+  padding: 0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
@@ -92,4 +87,39 @@
 .main-footer__link-social {
   margin: 0;
   padding: 0;
+}
+@media (min-width: 768px) {
+  .main-footer__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .main-footer__list {
+    margin-top: 50px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .main-footer__item {
+    margin-right: 15px;
+  }
+  .main-footer__list-social {
+    margin-top: 50px;
+  }
+}
+@media (min-width: 1170px) {
+  .main-footer {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+  .main-footer__wrapper {
+    max-width: 1170px;
+  }
+  .main-footer__item {
+    margin-right: 40px;
+  }
 }

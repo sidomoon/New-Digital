@@ -1,3 +1,4 @@
+/*Початок. Підключення шрифтів*/
 @font-face {
   font-family: "Proxima Nova";
   font-style: normal;
@@ -45,13 +46,15 @@
   src: url("../fonts/Source-Sans-Pro-Bold.woff2") format("woff2"),
   url("../fonts/Source-Sans-Pro-Bold.woff") format("woff");
 }
+/*Кінець. Підключення шрифтів*/
 
+/*Початок. Задається центрування, обнуляються зовнішні та внутрішні відступи.
+Вказується мінімальна ширина та шрифт за замовчуванням*/
 body {
   margin: 0 auto;
   padding: 0;
 
   min-width: 320px;
-  max-width: 1920px;
 
   font-family: "Proxima Nova", sans-serif;
   font-weight: bold;
@@ -59,37 +62,64 @@ body {
   line-height: 29.13px;
   color: #ffffff;
 }
+/*Кінець. Задається центрування, обнуляються зовнішні та внутрішні відступи.
+Вказується мінімальна ширина та шрифт за замовчуванням*/
 
+/*Початок. Задання параметрів та поведінки кнопок*/
 .button {
-  display: block;
+  display: block;/*задається блочний елемент*/
 
-  margin: 0;
-  padding: 12px 37px;
+  margin: 0;/*обнулення зовнішніх відступів*/
+  padding: 12px 37px;/*задаються внутрішні відступи*/
 
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans Pro";/*вказується шрифт*/
   font-weight: normal;
   font-size: 20px;
   line-height: 29.13px;
   color: #ffffff;
 
-  border: none;
-  border-radius: 25px;
+  border: none;/*обнулюються грані*/
+  border-radius: 25px;/*радіус вуглів граней*/
 
-  background-color: #fa4a33;
+  background-color: #fa4a33;/*вказується колір фону*/
 
-  box-shadow: 8px 15px 14px rgba(88, 39, 39, 0.27);
+  box-shadow: 8px 15px 14px rgba(88, 39, 39, 0.27);/*задаються параметри тіні*/
 
-  cursor: pointer;
+  cursor: pointer;/*тип курсору*/
 
-  transition: 0.5s;
+  transition: 0.5s;/*анімація із затримкою пів секунди*/
 
-  &:hover {
+  &:hover {/*вказується поведінка при наведенні курсора*/
     background-color: #009ce3;
 
     box-shadow: 0 0 24px rgba(88, 39, 39, 0.5);
   }
 
-  &:active {
+  &:active {/*вказується поведінка при кліці*/
     box-shadow: 0 0 24px rgba(88, 39, 39, 0.9);
   }
 }
+/*Кінець. Задання параметрів та поведінки кнопок*/
+
+/*Початок. Опис параметрів класу, що застосовується для приховування
+елементів які будуть доступні для "читалок"*/
+.visually-hidden {
+  margin: -1px;/*вказуються зовнішні відступи*/
+  padding: 0;/*обнулення внутрішніх відступів*/
+
+  position: absolute;/*абсолютне позиціонування*/
+
+  width: 1px;/*вказується ширина*/
+  height: 1px;/*вказується висота*/
+
+  border: 0;/*обнулення граней*/
+
+  white-space: nowrap;/*пробіли між словами не беруться до уваги*/
+
+  clip-path: inset(100%);/*вказується область видимості*/
+  clip: rect(0 0 0 0);/*абсолютно позиціонованний елемент буде приховано*/
+
+  overflow: hidden;/*все що виходить за межі елемента буде приховано*/
+}
+/*Кінець. Опис параметрів класу, що застосовується для приховування
+елементів які будуть доступні для "читалок"*/
