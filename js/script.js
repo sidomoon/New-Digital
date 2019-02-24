@@ -1,3 +1,18 @@
+//Гамбургер шапка
+var navToggle = document.querySelector('.main-header-nav__toggle');
+    navOpen = document.querySelector('.main-header-nav__wrapper');
+
+navOpen.classList.remove('main-header-nav__wrapper--open');
+
+navToggle.addEventListener('click', function() {
+  if (navOpen.classList.contains('main-header-nav__wrapper--open')) {
+    navOpen.classList.remove('main-header-nav__wrapper--open');
+  } else {
+    navOpen.classList.add('main-header-nav__wrapper--open');
+  }
+});
+//Гамбургер шапка
+
 //Плавний скролл до якорів
 var $page = $('html, body');
 
@@ -24,3 +39,18 @@ function trigger() {
   $(this).next().slideToggle(400);
 }
 //Аккордеон
+
+//Гамбургер підвал
+var footerToggle = document.querySelector('.main-footer__toggle');
+    footerOpen = document.querySelector('.main-footer__wrapper');
+
+footerOpen.classList.remove('main-footer__wrapper--open');
+
+footerToggle.addEventListener('click', function() {
+  if (footerOpen.classList.contains('main-footer__wrapper--open')) {
+    footerOpen.classList.remove('main-footer__wrapper--open');
+  } else {
+    footerOpen.classList.add('main-footer__wrapper--open');
+  }
+});
+//Гамбургер підвал
